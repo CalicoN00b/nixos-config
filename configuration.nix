@@ -100,9 +100,6 @@
   #  wget
     firefox
     discord
-    obsidian
-    vscode
-    jdk21
     kitty
   ];
 
