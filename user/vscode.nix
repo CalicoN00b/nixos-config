@@ -1,11 +1,10 @@
 { pkgs, lib, ... }:
 
 {
-    nixpkgs.config.allowUnfreePredicate = pkg:
-        builtins.elem (lib.getName pkg) [
-            "vscode"
-            "jdk"
-        ];
+    home.packages = with pkgs; [
+        vscode
+        jdk
+    ];
 
     programs.vscode = {
         enable = true;
