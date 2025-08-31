@@ -2,7 +2,8 @@
 
 {
   imports = [
-    ./zsh.nix
+    ./user/zsh.nix
+    ./user/starship.nix
   ];
   
   # Home Manager needs a bit of information about you and the paths it should

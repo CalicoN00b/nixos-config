@@ -101,7 +101,6 @@
     firefox
     discord
     obsidian
-    starship
     vscode
     jdk21
     kitty
