@@ -104,7 +104,6 @@
     vscode
     jdk21
     kitty
-    git
   ];
 
   fonts.packages = with pkgs; [
