@@ -19,6 +19,10 @@
                     vscjava.vscode-gradle
                     vscjava.vscode-java-dependency
                     visualstudioexptteam.vscodeintellicode
+                    # Extension Pack for Python
+                    ms-python.python
+                    ms-python.vscode-pylance
+                    ms-python.debugpy
                     # Nix Language Support
                     bbenoist.nix
                 ];
