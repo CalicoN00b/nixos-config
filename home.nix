@@ -27,7 +27,7 @@
   home.packages = with pkgs; [
     # Add packages that don't require additional configuration
     firefox
-    discord
+    vesktop # Discord with Vencord preinstalled
     obsidian
     kitty
 
