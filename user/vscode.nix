@@ -12,6 +12,7 @@
             Ian = {
                 extensions = with pkgs.vscode-extensions; [
                     # Extension Pack for Java
+                    vscjava.vscode-java-pack # Install this so VSCode doesn't bug you to install it
                     redhat.java
                     vscjava.vscode-java-debug
                     vscjava.vscode-java-test
