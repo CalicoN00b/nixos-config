@@ -28,17 +28,17 @@
                     bbenoist.nix
                 ];
                 userSettings = {
-                    java.jdt.ls.java.home = "${pkgs.jdk}/lib/openjdk";
-                    java.configuration.runtimes = {
+                    "java.jdt.ls.java.home" = "${pkgs.jdk}/lib/openjdk";
+                    "java.configuration.runtimes" = [{
                         name = "JavaSE-21";
                         path = "${pkgs.jdk}/lib/openjdk";
                         default = true;
-                    };
-                    explorer.compactFolders = false;
-                    terminal.integrated.fontFamily = "'3270 Nerd Font'";
-                    terminal.integrated.fontSize = 16;
-                    workbench.secondarySideBar.defaultVisibility = false;
-                    redhat.telemetry.enabled = false;
+                    }];
+                    "explorer.compactFolders" = false;
+                    "terminal.integrated.fontFamily" = "'3270 Nerd Font'";
+                    "terminal.integrated.fontSize" = 16;
+                    "workbench.secondarySideBar.defaultVisibility" = "hidden";
+                    "redhat.telemetry.enabled" = false;
                 };
             };
         };
