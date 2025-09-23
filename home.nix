@@ -3,7 +3,6 @@
 {
   imports = [
     ./user/zsh.nix
-    ./user/starship.nix
     ./user/git.nix
     ./user/vscode.nix
   ];
@@ -26,6 +25,7 @@
   # environment.
   home.packages = with pkgs; [
     # Add packages that don't require additional configuration
+    # Or that do their configuration imperatively
     firefox
     vesktop # Discord with Vencord preinstalled
     obsidian
