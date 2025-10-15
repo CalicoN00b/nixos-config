@@ -38,6 +38,7 @@
                     ];
                     "explorer.compactFolders" = false;
                     "terminal.integrated.fontFamily" = "'JetBrainsMono Nerd Font'";
+                    "terminal.integrated.fontLigatures.enabled" = true;
                     "terminal.integrated.fontSize" = 16;
                     "workbench.secondarySideBar.defaultVisibility" = "hidden";
                     "redhat.telemetry.enabled" = false;
