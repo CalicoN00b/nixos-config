@@ -45,4 +45,6 @@
             };
         };
     };
+
+    programs.gradle.enable = true;
 }
