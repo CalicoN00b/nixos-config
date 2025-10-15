@@ -98,7 +98,7 @@
   environment.systemPackages = with pkgs; [];
 
   fonts.packages = with pkgs; [
-    nerd-fonts._3270
+    nerd-fonts.jetbrains-mono
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
