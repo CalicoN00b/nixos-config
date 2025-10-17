@@ -5,6 +5,7 @@
     ./user/zsh.nix
     ./user/git.nix
     ./user/vscode.nix
+    ./user/nvim.nix
   ];
   
   # Home Manager needs a bit of information about you and the paths it should
@@ -30,6 +31,10 @@
     vesktop # Discord with Vencord preinstalled
     obsidian
     kitty
+
+    # For telescope.nvim
+    ripgrep
+    fd
 
     python3Packages.python
 
