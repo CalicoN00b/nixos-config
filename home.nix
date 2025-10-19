@@ -5,7 +5,8 @@
     ./user/zsh.nix
     ./user/git.nix
     ./user/vscode.nix
-    ./user/nvim.nix
+    # ./user/nvim.nix
+    ./user/nixvim.nix
   ];
   
   # Home Manager needs a bit of information about you and the paths it should

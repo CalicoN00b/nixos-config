@@ -5,9 +5,11 @@
         nixpkgs.url = "nixpkgs/nixos-25.05";
         home-manager.url = "github:nix-community/home-manager/release-25.05";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
+        nixvim.url = "github:nix-community/nixvim/nixos-25.05";
+        nixvim.inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    outputs = { self, nixpkgs, home-manager, ... }:
+    outputs = { self, nixpkgs, home-manager, nixvim, ... }:
     let
         system = "x86_64-linux";
         lib = nixpkgs.lib;
@@ -29,6 +31,7 @@
         homeConfigurations = {
             igalaviz = home-manager.lib.homeManagerConfiguration {
                 inherit pkgs;
+                extraSpecialArgs = { inherit nixvim; };
                 modules = [ ./home.nix ];
             };
         };
