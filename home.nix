@@ -5,7 +5,6 @@
     ./user/zsh.nix
     ./user/git.nix
     ./user/vscode.nix
-    # ./user/nvim.nix
     ./user/nixvim.nix
   ];
   
@@ -32,13 +31,18 @@
     vesktop # Discord with Vencord preinstalled
     obsidian
     kitty
+    vlc
 
     # For telescope.nvim
     ripgrep
     fd
 
-    python3Packages.python
-    clang
+    python313Packages.python
+
+    manim
+    manim-slides
+
+    gcc
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

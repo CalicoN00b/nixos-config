@@ -97,6 +97,8 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [];
 
+  programs.localsend.enable = true;
+
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
   ];

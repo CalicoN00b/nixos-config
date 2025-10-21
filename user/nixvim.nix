@@ -27,7 +27,7 @@
                 key = "<leader>ff";
             }
             {
-                action = "<cmd>Neotree filesystem reveal<CR>";
+                action = "<cmd>Neotree filesystem reveal left<CR>";
                 key = "<leader>exo";
             }
             {
@@ -43,6 +43,7 @@
             telescope.enable = true;
             neo-tree.enable = true;
             web-devicons.enable = true;
+	    bufferline.enable = true;
 
             lsp = {
                 enable = true;
@@ -50,6 +51,7 @@
                 servers = {
                     jdtls.enable = true;
                     nixd.enable = true;
+		    pylsp.enable = true;
 
                     rust_analyzer = {
                         enable = true;
