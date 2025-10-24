@@ -41,9 +41,8 @@
             luasnip.enable = true;
             treesitter.enable = true;
             telescope.enable = true;
-            neo-tree.enable = true;
             web-devicons.enable = true;
-	    bufferline.enable = true;
+	    neo-tree.enable = true;
 
             lsp = {
                 enable = true;
@@ -95,6 +94,12 @@
                     # };
                 };
             };
+
+	    bufferline = {
+		enable = true;
+
+		settings.options.separator_style = "slant";
+	    };
         };  
     };
 }
