@@ -32,6 +32,7 @@
     obsidian
     kitty
     vlc
+    yazi # config for this one is easier to do manually
 
     # For telescope.nvim
     ripgrep
@@ -90,7 +91,7 @@
   #  /etc/profiles/per-user/igalaviz/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
