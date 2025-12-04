@@ -43,6 +43,7 @@
             telescope.enable = true;
             web-devicons.enable = true;
 	    neo-tree.enable = true;
+	    markdown-preview.enable = true;
 
             lsp = {
                 enable = true;
@@ -72,6 +73,7 @@
 
                 settings.mapping = {
                     "<CR>" = "cmp.mapping.confirm({ select = true })";
+		    "<S-CR>" = "cmp.mapping.confirm({ select = false })";
                     "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
                     "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
                     # "<Tab>" = {
