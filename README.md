@@ -51,4 +51,13 @@ home-manager switch --flake .
 
 If you want to update the inputs before the installation, run `nix flake update` before running those two commands.
 
+## Imperative Configuration
+
+Currently, there are two things that need to be imperatively configured. The first is the KDE Plasma DE itself. I'm unsure if there is a way to be able to declare it's config through nix. The second is yazi. While there is a way to do the config declaratively through nix, I've currently found it easier to just symlink the imperative config for now. I'm planning on changing that. To symlink the yazi config, run this command:
+```bash
+ln -s /path/to/cloned/repository/yazi/ ~/.config/
+```
+
+I'm uncertain if you need to provide an absolute path, as shown, for the symlink, but when I did it myself, it didn't seem to want to work without the absolute path.
+
 Congratulations, you now have my (objectively awesome) NixOS setup!

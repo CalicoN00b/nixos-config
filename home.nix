@@ -6,6 +6,7 @@
     ./user/git.nix
     ./user/vscode.nix
     ./user/nixvim.nix
+    ./user/kitty.nix
   ];
   
   # Home Manager needs a bit of information about you and the paths it should
@@ -30,7 +31,6 @@
     firefox
     vesktop # Discord with Vencord preinstalled
     obsidian
-    kitty
     vlc
     yazi # config for this one is easier to do manually
 
@@ -39,11 +39,6 @@
     fd
 
     python313Packages.python
-
-    manim
-    manim-slides
-
-    gcc
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
