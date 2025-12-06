@@ -33,6 +33,9 @@
     obsidian
     vlc
     yazi # config for this one is easier to do manually
+    btop
+    tree
+    lolcat
 
     # For telescope.nvim
     ripgrep
