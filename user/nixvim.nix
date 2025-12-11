@@ -42,8 +42,15 @@
             treesitter.enable = true;
             telescope.enable = true;
             web-devicons.enable = true;
-	    neo-tree.enable = true;
 	    markdown-preview.enable = true;
+
+	    neo-tree = {
+		enable = true;
+
+		settings = {
+		    filesystem.filtered_items.visible = true;
+		};
+	    };
 
             lsp = {
                 enable = true;
