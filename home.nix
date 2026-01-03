@@ -36,6 +36,7 @@
     btop
     tree
     lolcat
+    cloudflared
 
     # For telescope.nvim
     ripgrep
