@@ -7,6 +7,7 @@
     ./user/vscode.nix
     ./user/nixvim.nix
     ./user/kitty.nix
+ #   ./user/floorp.nix
   ];
   
   # Home Manager needs a bit of information about you and the paths it should
