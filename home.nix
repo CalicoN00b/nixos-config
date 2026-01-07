@@ -45,6 +45,14 @@
 
     python313Packages.python
 
+    # MATH 3070 Stuff
+    R
+    rstudio
+    coreutils
+
+    # CS 3500 Stuff
+    jetbrains.rider
+
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
