@@ -48,12 +48,14 @@
     # MATH 3070 Stuff
     R
     rstudio
+    binutils_nogold
+    rPackages.tinytex
     coreutils
 
     # CS 3500 Stuff
     jetbrains.rider
-    msbuild
- #   mono
+    dotnet-sdk_10
+    dotnet-runtime_10
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
