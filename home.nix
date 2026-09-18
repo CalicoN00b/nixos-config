@@ -21,13 +21,15 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "25.05"; # Please read the comment before changing.
+  home.stateVersion = "26.05"; # Please read the comment before changing.
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
     # Add packages that don't require additional configuration
     # Or that do their configuration imperatively
+
+	kid3
 
     # Config has to be done through Librewolf settings and about:config
     # Can do (at least some) config through nix, but not a priority.
@@ -48,6 +50,9 @@
     # For telescope.nvim
     ripgrep
     fd
+
+	# CS 3810
+	mars-mips
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

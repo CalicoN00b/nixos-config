@@ -2,10 +2,10 @@
     description = "Ian's Flake";
 
     inputs = {
-        nixpkgs.url = "nixpkgs/nixos-25.11";
-        home-manager.url = "github:nix-community/home-manager/release-25.11";
+        nixpkgs.url = "nixpkgs/nixos-26.05";
+        home-manager.url = "github:nix-community/home-manager/release-26.05";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
-        nixvim.url = "github:nix-community/nixvim/nixos-25.11";
+        nixvim.url = "github:nix-community/nixvim/nixos-26.05";
         nixvim.inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -22,7 +22,7 @@
         };
     in {
         nixosConfigurations = {
-            nixos = lib.nixosSystem {
+            twinkbook = lib.nixosSystem {
                 inherit system;
                 modules = [ ./configuration.nix ];
             };

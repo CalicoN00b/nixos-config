@@ -51,7 +51,7 @@
                     "terminal.integrated.fontLigatures.enabled" = true;
                     "terminal.integrated.fontSize" = 16;
                     "workbench.secondarySideBar.defaultVisibility" = "hidden";
-                }
+                };
             };
 
             # Need to add profiles for C++ and CS3505
