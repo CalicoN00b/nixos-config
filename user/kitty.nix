@@ -2,12 +2,12 @@
 
 {
     programs.kitty = {
-	enable = true;
+		enable = true;
 
-	font = {
-	    package = pkgs.nerd-fonts.jetbrains-mono;
-	    name = "JetBrainsMonoNFM-Regular";
-	    size = 11;
-	};
+		font = {
+			package = pkgs.nerd-fonts.jetbrains-mono;
+			name = "JetBrainsMonoNFM-Regular";
+			size = 11;
+		};
     };
 }

@@ -89,6 +89,8 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  programs.localsend.enable = true;
+
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
@@ -96,12 +98,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [];
-
-  programs.localsend.enable = true;
-
-  # fonts.packages = with pkgs; [
-  #   nerd-fonts.jetbrains-mono
-  # ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 

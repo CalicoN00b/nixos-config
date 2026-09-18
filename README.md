@@ -5,7 +5,7 @@ This is the NixOS configuration for my NixOS setup.
 # Setup
 
 1. Install NixOS. On my machine, I installed the KDE Plasma DE through the installer, so it is the only one that I can "guarantee" will work.
-2. Install Home-Manager. I installed it using the Standalone Installation.
+2. Install Home-Manager. I installed it using the [Standalone Installation](https://nix-community.github.io/home-manager/installation/standalone.html).
 3. Create an SSH key. Obviously, since this is currently a private repository, you'll need it to clone this repository.
 
 ## Inside the repository
@@ -21,19 +21,20 @@ sudo nixos-generate-config --show-hardware-config > hardware-configuration.nix
 ```
 If you don't do this, you will seriously mess up your system (ask me how I know).
 
+In `configuration.nix`, change these three things:
+1. `networking.hostName` to your desired host name
+2. `users.users.igalaviz` to `user.user.<your-username>`
+3. `system.stateVersion` to the version of your original NixOS install (e.g. if you installed NixOS 25.11 *originally*, change it to 25.11)
+
 In `home.nix`, change these three things:
 1. `home.username` to your username
 2. `home.homeDirectory` to your home directory
 3. `home.stateVersion` to the version of your original Home-Manager install (e.g. if you installed Home-Manager 25.11 *originally*, change it to 25.11)
 
-In `flake.nix`, change these two things:
-1. `nixosConfigurations.nixos` to your hostname
+In `flake.nix`, change these things:
+1. `nixosConfigurations.nixos` to your hostname just defined in `configuration.nix`.
 2. `homeConfigurations.igalaviz` to your username
-
-In `configuration.nix`, change these three things:
-1. `networking.hostName` to your desired host name
-2. `users.users.igalaviz` to `user.user.<your-username>`
-3. `system.stateVersion` to the version of your original NixOS install (e.g. if you installed NixOS 25.11 *originally*, change it to 25.11)
+3. Upgrade the version of `nixpgs.url` and related inputs to the latest version (e.g. if `nixpgs.url = ...-25.11` and the latest NixOS version is 26.05, change it to `nixpgs.url = ...-26.05`)
 
 In `user/git.nix`, change these four things:
 1. `settings.user.name` to your name
@@ -45,19 +46,32 @@ In `user/git.nix`, change these four things:
 
 Once you have changed everything necessary to change, and configured it otherwise to your liking, you can use this config. To do so, run these two commands:
 ```bash
+nix flake update # OPTIONAL! updates the flake's inputs.
 sudo nixos-rebuild switch --flake .
 home-manager switch --flake .
 ```
 
-If you want to update the inputs before the installation, run `nix flake update` before running those two commands.
-
 ## Imperative Configuration
 
-Currently, there are two things that need to be imperatively configured. The first is the KDE Plasma DE itself. I'm unsure if there is a way to be able to declare it's config through nix. The second is yazi. While there is a way to do the config declaratively through nix, I've currently found it easier to just symlink the imperative config for now. I'm planning on changing that. To symlink the yazi config, run this command:
+### Yazi
+
+Yazi can do its configuration through nix, but it is not something I care to figure out for right now.
+There is a config available in this repository. To link this config for yazi to use, run this command.
+This will replace any yazi config currently in ~/.config/
+
 ```bash
-ln -s /path/to/cloned/repository/yazi/ ~/.config/
+ln -sf /path/to/cloned/repository/imperative-configs/yazi/ ~/.config/
 ```
 
-I'm uncertain if you need to provide an absolute path, as shown, for the symlink, but when I did it myself, it didn't seem to want to work without the absolute path.
+### Vesktop
+
+Vesktop also can do its configuration through nix, but I also don't care to figure that out right now either.
+For now, if you would like to load my settings into it, simply import `imperative-configs/vesktop/vencord-settings-backup-2026-09-16.json` in the Backup & Restore section in the Vesktop settings.
+
+### KDE Plasma
+
+I'm uncertain if the config for KDE Plasma can be done through nix, so you'll just have to do the config for this manually, sorry.
+
+# Enjoy!
 
 Congratulations, you now have my (objectively awesome) NixOS setup!

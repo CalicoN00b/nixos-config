@@ -9,7 +9,7 @@
     programs.vscode = {
         enable = true;
         profiles = {
-            Ian = {
+            Java = {
                 extensions = with pkgs.vscode-extensions; [
                     # Extension Pack for Java
                     vscjava.vscode-java-pack # Install this so VSCode doesn't bug you to install it
@@ -20,20 +20,15 @@
                     vscjava.vscode-gradle
                     vscjava.vscode-java-dependency
                     visualstudioexptteam.vscodeintellicode
-                    # Extension Pack for Python
-                    ms-python.python
-                    ms-python.vscode-pylance
-                    ms-python.debugpy
-                    # Nix Language Support
-                    bbenoist.nix
                 ];
+
                 userSettings = {
                     "java.jdt.ls.java.home" = "${pkgs.jdk}/lib/openjdk";
                     "java.configuration.runtimes" = [
                         {
                             "name" = "JavaSE-21";
                             "path" = "${pkgs.jdk}/lib/openjdk";
-                            "default" = true;
+                            "default" = false;
                         }
                     ];
                     "explorer.compactFolders" = false;
@@ -44,6 +39,22 @@
                     "redhat.telemetry.enabled" = false;
                 };
             };
+
+            Nix = {
+                extensions = with pkgs.vscode-extensions; [
+                    bbenoist.nix
+                ];
+
+                userSettings = {
+                    "explorer.compactFolders" = false;
+                    "terminal.integrated.fontFamily" = "'JetBrainsMono Nerd Font'";
+                    "terminal.integrated.fontLigatures.enabled" = true;
+                    "terminal.integrated.fontSize" = 16;
+                    "workbench.secondarySideBar.defaultVisibility" = "hidden";
+                }
+            };
+
+            # Need to add profiles for C++ and CS3505
         };
     };
 

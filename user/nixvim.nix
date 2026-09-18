@@ -6,16 +6,15 @@
     ];
 
     programs.nixvim = {
+        enable = true;
+
         opts = {
             number = true;
             shiftwidth = 4;
         };
 
-        enable = true;
-
         colorschemes.catppuccin.enable = true;
         globals.mapleader = " ";
-
 
         keymaps = [
             {
@@ -42,15 +41,15 @@
             treesitter.enable = true;
             telescope.enable = true;
             web-devicons.enable = true;
-	    markdown-preview.enable = true;
+            markdown-preview.enable = true;
 
-	    neo-tree = {
-		enable = true;
+            neo-tree = {
+                enable = true;
 
-		settings = {
-		    filesystem.filtered_items.visible = true;
-		};
-	    };
+                settings = {
+                    filesystem.filtered_items.visible = true;
+                };
+            };
 
             lsp = {
                 enable = true;
@@ -58,13 +57,6 @@
                 servers = {
                     jdtls.enable = true;
                     nixd.enable = true;
-		    pylsp.enable = true;
-
-                    rust_analyzer = {
-                        enable = true;
-                        installCargo = true;
-                        installRustc = true;
-                    };
                 };
             };
 
@@ -80,7 +72,7 @@
 
                 settings.mapping = {
                     "<CR>" = "cmp.mapping.confirm({ select = true })";
-		    "<S-CR>" = "cmp.mapping.confirm({ select = false })";
+		            "<S-CR>" = "cmp.mapping.confirm({ select = false })";
                     "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
                     "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
                     # "<Tab>" = {
@@ -104,11 +96,11 @@
                 };
             };
 
-	    bufferline = {
-		enable = true;
+            bufferline = {
+            enable = true;
 
-		settings.options.separator_style = "slant";
-	    };
+            settings.options.separator_style = "slant";
+            };
         };  
     };
 }

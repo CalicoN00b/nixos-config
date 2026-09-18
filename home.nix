@@ -7,7 +7,6 @@
     ./user/vscode.nix
     ./user/nixvim.nix
     ./user/kitty.nix
- #   ./user/floorp.nix
   ];
   
   # Home Manager needs a bit of information about you and the paths it should
@@ -29,33 +28,26 @@
   home.packages = with pkgs; [
     # Add packages that don't require additional configuration
     # Or that do their configuration imperatively
-    firefox
+
+    # Config has to be done through Librewolf settings and about:config
+    # Can do (at least some) config through nix, but not a priority.
+    librewolf
+
+    # Config currently in imperative-configs/vesktop
+    # Can do config through nix, but not a priority.
     vesktop # Discord with Vencord preinstalled
+
+    # Config has to be done in Obsidian settings
+    # Can do (at least some) config through nix, but not a priority.
     obsidian
-    vlc
-    yazi # config for this one is easier to do manually
-    btop
-    tree
-    lolcat
-    cloudflared
+
+    # Config currently in imperative-configs/yazi/
+    # Would like to do through nix, but not a priority.
+    yazi
 
     # For telescope.nvim
     ripgrep
     fd
-
-    python313Packages.python
-
-    # MATH 3070 Stuff
-    R
-    rstudio
-    binutils_nogold
-    rPackages.tinytex
-    coreutils
-
-    # CS 3500 Stuff
-    jetbrains.rider
-    dotnet-sdk_10
-    dotnet-runtime_10
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
