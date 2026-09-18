@@ -2,11 +2,10 @@
 
 {
     home.packages = with pkgs; [
-        vscode
         jdk
     ];
 
-    programs.vscode = {
+    programs.vscodium = {
         enable = true;
         profiles = {
             Java = {

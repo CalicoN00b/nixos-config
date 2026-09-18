@@ -46,14 +46,14 @@ In `user/git.nix`, change these four things:
 
 Once you have changed everything necessary to change, and configured it otherwise to your liking, you can use this config. To do so, run these two commands:
 ```bash
-nix flake update # OPTIONAL! updates the flake's inputs.
-sudo nixos-rebuild switch --flake .
-home-manager switch --flake .
+nix --extra-experimental-features flakes --extra-experimental-features nix-command flake update # OPTIONAL! updates the flake's inputs.
+sudo nixos-rebuild switch --flake .#<hostname> # Replace <hostname> with the hostname you defined in flake.nix
+home-manager switch --flake .#<username> # Replace <username> with the username defined in flake.nix
 ```
 
 ## Imperative Configuration
 
-### Yazi
+### Yazi (NOT WORKING)
 
 Yazi can do its configuration through nix, but it is not something I care to figure out for right now.
 There is a config available in this repository. To link this config for yazi to use, run this command.

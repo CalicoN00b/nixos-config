@@ -4,7 +4,7 @@
   imports = [
     ./user/zsh.nix
     ./user/git.nix
-    ./user/vscode.nix
+    ./user/vscodium.nix
     ./user/nixvim.nix
     ./user/kitty.nix
   ];
