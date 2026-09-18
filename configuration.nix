@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./system/tailscale.nix
+      ./system/virtualisation.nix
     ];
 
   # Bootloader.
