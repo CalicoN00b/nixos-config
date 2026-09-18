@@ -29,7 +29,7 @@
     # Add packages that don't require additional configuration
     # Or that do their configuration imperatively
 
-	kid3
+	  kid3
 
     # Config has to be done through Librewolf settings and about:config
     # Can do (at least some) config through nix, but not a priority.
@@ -51,8 +51,8 @@
     ripgrep
     fd
 
-	# CS 3810
-	mars-mips
+    # CS 3810
+    mars-mips
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

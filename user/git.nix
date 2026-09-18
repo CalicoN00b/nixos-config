@@ -25,10 +25,16 @@
             enable = true;
 			enableDefaultConfig = false;
 				
-			matchBlocks."*" = {
-				addKeysToAgent = "yes";
-				identityFile = "~/.ssh/id_ed25519";
-			};
+			# matchBlocks."*" = {
+			# 	addKeysToAgent = "yes";
+			# 	identityFile = "~/.ssh/id_ed25519";
+			# };
+            settings = {
+                "Host *" = {
+                    AddKeysToAgent = "yes";
+                    IdentityFile = "~/.ssh/id_ed25519";
+                };
+            };
         };
     };
 
