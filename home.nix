@@ -2,11 +2,7 @@
 
 {
   imports = [
-    ./user/zsh.nix
-    ./user/git.nix
-    ./user/vscodium.nix
-    ./user/nixvim.nix
-    ./user/kitty.nix
+    ./user
   ];
   
   # Home Manager needs a bit of information about you and the paths it should
