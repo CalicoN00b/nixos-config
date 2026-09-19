@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 
 {
-    users.users.igalaviz.extraGroups = [
+    users.users.${username}.extraGroups = [
         "docker" 
         "libvirtd"
     ];

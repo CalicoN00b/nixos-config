@@ -3,7 +3,11 @@
 {
     imports = [
         ./fonts.nix
-        ./tailscale.nix
         ./virtualisation.nix
+        ./services.nix
+        ./user.nix
+        ./hardware-configuration.nix
+        ./system.nix
+        ./network.nix
     ];
 }
