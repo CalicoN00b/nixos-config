@@ -7,5 +7,6 @@
         ./nixvim.nix
         ./vscodium.nix
         ./zsh.nix
+        ./ssh.nix
     ];
 }
