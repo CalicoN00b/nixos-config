@@ -6,8 +6,8 @@
 
         settings = {
             user = {
-                name = "Ian Galaviz";
-                email = "brianatthehouse@gmail.com";
+                name = "MY_NAME";
+                email = "MY_EMAIL";
             };
 
             init.defaultBranch = "main";
