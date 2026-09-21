@@ -20,7 +20,7 @@
         printing.enable = true;
 
         # Enable sound with pipewire
-        pulseaudio.enable = true;
+        pulseaudio.enable = false;
         pipewire = {
             enable = true;
 
@@ -29,7 +29,7 @@
                 support32Bit = true;
             };
 
-            pusle.enable = true;
+            pulse.enable = true;
         };
 
         # Enable touchpad support (enabled default in most desktopManager).
@@ -40,5 +40,4 @@
     };
 
     security.rtkit.enable = true;
-    programs.localsend.enable = true;
 }

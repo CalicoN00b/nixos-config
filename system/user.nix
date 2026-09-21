@@ -5,7 +5,7 @@
 
     home-manager = {
         useUserPackages = true;
-        useGlobalPackages = true;
+        useGlobalPkgs = true;
         extraSpecialArgs = { inherit inputs username host nixvim; };
         users.${username} = {
             imports = [ ./../home ];
@@ -21,6 +21,8 @@
             
             programs.home-manager.enable = true;
         };
+
+        backupFileExtension = "home-backup";
     };
 
     users.users.${username} = {

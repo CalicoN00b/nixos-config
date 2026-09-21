@@ -12,7 +12,7 @@
         nixvim.url = "github:nix-community/nixvim/nixos-26.05";
     };
 
-    outputs = { self, nixpkgs, ... }@inputs:
+    outputs = { self, nixpkgs, nixvim, ... }@inputs:
     let
         username = "MY_USERNAME";
         host = "MY_HOSTNAME";

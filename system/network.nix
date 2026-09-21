@@ -2,7 +2,7 @@
 
 {
     networking = {
-        hostname = "${host}";
+        hostName = "${host}";
         networkmanager.enable = true;
     };
 }

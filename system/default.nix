@@ -9,5 +9,6 @@
         ./hardware-configuration.nix
         ./system.nix
         ./network.nix
+        ./programs.nix
     ];
 }

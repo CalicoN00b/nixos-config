@@ -9,5 +9,6 @@
         ./zsh.nix
         ./ssh.nix
         ./packages.nix
+        ./starship.nix
     ];
 }

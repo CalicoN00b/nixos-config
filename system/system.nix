@@ -6,7 +6,7 @@
         efi.canTouchEfiVariables = true;
     };
 
-    nix.settings.experimental-feature = ["nix-command" "flakes"];
+    nix.settings.experimental-features = ["nix-command" "flakes"];
 
     i18n = {
         defaultLocale = "en_US.UTF-8";
