@@ -98,14 +98,31 @@ if [[ $gConf =~ ^[Yy]{1,1}$ ]]; then
 fi
 
 if [ ! -f /etc/nixos/hardware-configuration.nix ]; then
-    echo "/etc/nixos/hardware-configuration.nix does not exist! Aborting"
+    echo "/etc/nixos/hardware-configuration.nix does not exist! Regenerating hardware config (will ask for sudo password)."
+    sudo nixos-generate-config --show-hardware-config > ./system/hardware-configuration.nix
+else 
+    echo "Copying /etc/nixos/hardware-configuration.nix to ./system/hardware-configuration.nix"
+    cp /etc/nixos/hardware-configuration.nix ./system/hardware-configuration.nix
+fi
+
+echo "Rebuilding system (will ask for sudo password)"
+if ~ [[ sudo nixos-rebuild switch --flake .#$hostname ]] 
+    echo "Failed to build system!"
+    echo "Reverting username"
+    sed -i "s/$username/MY_USERNAME/g" ./flake.nix
+
+    echo "Reverting hostname"
+    sed -i "s/$hostname/MY_HOSTNAME/g" ./flake.nix
+
+    if [[ $gConf =~ ^[Yy]{1,1}$ ]]; then
+        echo "Reverting git.nix config"
+        sed -i "s/$gUserName/MY_NAME/g" ./home/git.nix
+        sed -i "s/$gUserEmail/MY_EMAIL/g" ./home/git.nix
+    fi
+
+    echo "Please read the nixos-rebuild error messages to try to fix it, then rerun this script"
     exit 1
 fi
-echo "Copying /etc/nixos/hardware-configuration.nix to ./system/hardware-configuration.nix"
-cp /etc/nixos/hardware-configuration.nix ./system/hardware-configuration.nix
-
-echo "Rebuilding system"
-sudo nixos-rebuild switch --flake .#$hostname
 
 echo "System built successfully!"
 echo "Please reboot to fully apply the config"
