@@ -106,7 +106,8 @@ else
 fi
 
 echo "Rebuilding system (will ask for sudo password)"
-if ~ [[ sudo nixos-rebuild switch --flake .#$hostname ]] 
+sudo nixos-rebuild switch --flake .#$hostname
+if [ $? -ne 0 ]; then
     echo "Failed to build system!"
     echo "Reverting username"
     sed -i "s/$username/MY_USERNAME/g" ./flake.nix

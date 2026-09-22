@@ -26,5 +26,10 @@
 
         # CS 3810
         mars-mips
+
+        # C & C++ stuff
+        gcc
+        libgcc
+        gnumake
     ];
 }
