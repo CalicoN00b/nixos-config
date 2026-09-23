@@ -16,10 +16,12 @@
         # General settings
         "update.mode" = "none";
         "extensions.autoUpdate" = false;
+        "extensions.autoCheckUpdates" = false;
         "explorer.compactFolders" = false;
         "terminal.integrated.fontFamily" = "'JetBrainsMono Nerd Font'";
         "terminal.integrated.fontLigatures.enabled" = true;
         "terminal.integrated.fontSize" = 14;
+        "terminal.integrated.initialHint" = false;
         "workbench.secondarySideBar.defaultVisibility" = "hidden";
     };
 }
