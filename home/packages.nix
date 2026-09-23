@@ -29,7 +29,9 @@
 
         # C & C++ stuff
         gcc
-        libgcc
+        gdb
+        clang-tools
+        cmake
         gnumake
     ];
 }

@@ -6,7 +6,10 @@
         efi.canTouchEfiVariables = true;
     };
 
-    nix.settings.experimental-features = ["nix-command" "flakes"];
+    nix.settings = {
+        experimental-features = ["nix-command" "flakes"];
+        warn-dirty = false;
+    };
 
     i18n = {
         defaultLocale = "en_US.UTF-8";

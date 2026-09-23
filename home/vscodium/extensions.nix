@@ -16,6 +16,6 @@
         bbenoist.nix
 
         # C/C++
-        ms-vscode.cpptools # I know it's Microsoft, sorry.
+        llvm-vs-code-extensions.vscode-clangd
     ];
 }
