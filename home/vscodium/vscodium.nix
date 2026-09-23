@@ -10,15 +10,7 @@
         profiles = {
             Java = {
                 extensions = with pkgs.vscode-extensions; [
-                    # Extension Pack for Java
-                    vscjava.vscode-java-pack # Install this so VSCode doesn't bug you to install it
-                    redhat.java
-                    vscjava.vscode-java-debug
-                    vscjava.vscode-java-test
-                    vscjava.vscode-maven
-                    vscjava.vscode-gradle
-                    vscjava.vscode-java-dependency
-                    visualstudioexptteam.vscodeintellicode
+                    
                 ];
 
                 userSettings = {
@@ -40,9 +32,6 @@
             };
 
             Nix = {
-                extensions = with pkgs.vscode-extensions; [
-                    bbenoist.nix
-                ];
 
                 userSettings = {
                     "explorer.compactFolders" = false;
