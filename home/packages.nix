@@ -8,10 +8,6 @@
         # Can do (at least some) config through nix, but not a priority.
         librewolf
 
-        # Config currently in imperative-configs/vesktop
-        # Can do config through nix, but not a priority.
-        vesktop # Discord with Vencord preinstalled
-
         # Config has to be done in Obsidian settings
         # Can do (at least some) config through nix, but not a priority.
         obsidian
