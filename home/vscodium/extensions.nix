@@ -17,5 +17,9 @@
 
         # C/C++
         llvm-vs-code-extensions.vscode-clangd
+
+        # Theme and icons
+        catppuccin.catppuccin-vsc
+        catppuccin.catppuccin-vsc-icons
     ];
 }
