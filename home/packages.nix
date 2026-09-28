@@ -1,8 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, frc-nix-pkgs, ... }:
 
 {
-    home.packages = with pkgs; [
+    home.packages = (with pkgs; [
         kid3
+        yt-dlp
+        fluffychat
 
         # Config has to be done through Librewolf settings and about:config
         # Can do (at least some) config through nix, but not a priority.
@@ -29,5 +31,10 @@
         clang-tools
         cmake
         gnumake
-    ];
+    ]) ++ (with frc-nix-pkgs; [
+        vscode-wpilib
+        advantagescope
+        elastic-dashboard
+        pathplanner
+    ]);
 }

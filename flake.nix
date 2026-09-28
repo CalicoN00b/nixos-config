@@ -10,9 +10,11 @@
         };
 
         nixvim.url = "github:nix-community/nixvim/nixos-26.05";
+
+        frc-nix.url = "github:frc4451/frc-nix/season/2026";
     };
 
-    outputs = { self, nixpkgs, nixvim, ... }@inputs:
+    outputs = { self, nixpkgs, nixvim, frc-nix, ... }@inputs:
     let
         username = "MY_USERNAME";
         host = "MY_HOSTNAME";
@@ -31,7 +33,7 @@
                 inherit system;
                 modules = [ ./system ];
                 specialArgs = {
-                    inherit self inputs username host nixvim;
+                    inherit self inputs username host nixvim frc-nix;
                 };
             };
         };

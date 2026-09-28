@@ -1,4 +1,4 @@
-{ pkgs, inputs, username, host, nixvim, ... }:
+{ pkgs, inputs, username, host, nixvim, frc-nix, ... }:
 
 {
     imports = [ inputs.home-manager.nixosModules.home-manager ];
@@ -6,7 +6,10 @@
     home-manager = {
         useUserPackages = true;
         useGlobalPkgs = true;
-        extraSpecialArgs = { inherit inputs username host nixvim; };
+        extraSpecialArgs = { 
+            inherit inputs username host nixvim;
+            frc-nix-pkgs = frc-nix.packages.${pkgs.stdenv.hostPlatform.system};
+        };
         users.${username} = {
             imports = [ ./../home ];
 
