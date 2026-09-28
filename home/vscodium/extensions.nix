@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, frc-nix-pkgs, ... }:
 
 {
     programs.vscodium.profiles.default.extensions = with pkgs.vscode-extensions; [
@@ -17,6 +17,9 @@
 
         # C/C++
         llvm-vs-code-extensions.vscode-clangd
+
+        # WPILib FRC Extension
+        frc-nix-pkgs.vscode-wpilib
 
         # Theme and icons
         catppuccin.catppuccin-vsc

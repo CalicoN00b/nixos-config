@@ -32,7 +32,6 @@
         cmake
         gnumake
     ]) ++ (with frc-nix-pkgs; [
-        vscode-wpilib
         advantagescope
         elastic-dashboard
         pathplanner
