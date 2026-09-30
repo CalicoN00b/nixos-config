@@ -3,6 +3,7 @@
 {
     imports = [
         ./vscodium
+        ./yazi
         ./vesktop.nix
         ./git.nix
         ./kitty.nix
