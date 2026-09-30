@@ -4,6 +4,10 @@
     programs.kitty = {
 		enable = true;
 
+		themeFile = "Catppuccin-Mocha";
+		
+		shellIntegration.enableZshIntegration = true;
+
 		font = {
 			package = pkgs.nerd-fonts.jetbrains-mono;
 			name = "JetBrainsMonoNFM-Regular";
