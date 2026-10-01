@@ -6,11 +6,18 @@
         "update.mode" = "none";
         "extensions.autoUpdate" = false;
         "extensions.autoCheckUpdates" = false;
+
         "explorer.compactFolders" = false;
+
+        "editor.fontFamily" = "'JetBrainsMono Nerd Font', 'monospace'";
+        "editor.fontSize" = 14;
+        "editor.fontLigatures" = true;
+
         "terminal.integrated.fontFamily" = "'JetBrainsMono Nerd Font'";
         "terminal.integrated.fontLigatures.enabled" = true;
         "terminal.integrated.fontSize" = 14;
         "terminal.integrated.initialHint" = false;
+
         "workbench.secondarySideBar.defaultVisibility" = "hidden";
 
         # Java related settings

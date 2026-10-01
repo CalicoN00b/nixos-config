@@ -8,7 +8,7 @@
             mgr = {
                 sort_by = "natural";
                 sort_dir_first = true;
-                show_hidden = true;
+                show_hidden = false; # Press "." to toggle showing hidden files.
                 linemode = "mtime";
             };
         };
