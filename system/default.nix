@@ -10,5 +10,6 @@
         ./system.nix
         ./network.nix
         ./programs.nix
+        ./displayManager.nix
     ];
 }

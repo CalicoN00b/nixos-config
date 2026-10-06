@@ -12,10 +12,6 @@
             };
         };
 
-        # Enable KDE Plasma DE
-        displayManager.sddm.enable = true;
-        desktopManager.plasma6.enable = true;
-
         # Enable CUPS to print documents
         printing.enable = true;
 
@@ -31,9 +27,6 @@
 
             pulse.enable = true;
         };
-
-        # Enable touchpad support (enabled default in most desktopManager).
-        # xserver.libinput.enable = true;
 
         openssh.enable = true;
         tailscale.enable = true;

@@ -5,6 +5,7 @@
         kid3
         yt-dlp
         fluffychat
+        rofi
 
         # Config has to be done through Librewolf settings and about:config
         # Can do (at least some) config through nix, but not a priority.
@@ -13,10 +14,6 @@
         # Config has to be done in Obsidian settings
         # Can do (at least some) config through nix, but not a priority.
         obsidian
-
-        # Config currently in imperative-configs/yazi/
-        # Would like to do through nix, but not a priority.
-        yazi
 
         # For telescope.nvim
         ripgrep

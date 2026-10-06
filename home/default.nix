@@ -4,6 +4,7 @@
     imports = [
         ./vscodium
         ./yazi
+        ./hyprland
         ./vesktop.nix
         ./git.nix
         ./kitty.nix
