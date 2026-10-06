@@ -9,9 +9,10 @@
             "SUPER, Prior, fullscreen, 0" # PageUp
             "SUPER SHIFT, Prior, fullscreen, 1"
 
-            "SUPER, L, exec, hyprctl dispatch exit"
-            "SUPER, Escape, exec, systemctl suspend"
-            "SUPER SHIFT, Escape, exec, systemctl poweroff"
+            "SUPER, L, exec, hyprlock"
+            "SUPER SHIFT, L, exec, hyprshutdown -t 'Logging out...'"
+            "SUPER, Escape, exec, hyprlock & systemctl suspend"
+            "SUPER SHIFT, Escape, exec, hyprshutdown -t 'Shutting down...' -p 'shutdown now'"
 
             "CTRL ALT, up, exec, hyprctl dispatch setfloating active"
             "CTRL ALT, down, exec, hyprctl dispatch settiled active"
