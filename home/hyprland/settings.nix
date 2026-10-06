@@ -2,9 +2,7 @@
 
 {
     wayland.windowManager.hyprland.settings = {
-        "$mod" = "SUPER";
-
-        monitor = [ ",1920x1200,auto,auto" ];
+        monitor = [ ",1920x1200,auto,1" ];
 
         input = {
             touchpad = {
@@ -17,11 +15,8 @@
             disable_hyprland_logo = true;
             disable_splash_rendering = true;
             disable_autoreload = false;
+            focus_on_activate = true;
+            middle_click_paste = false;
         };
-
-        bind = [
-            "CTRL ALT, T, exec, kitty"
-            "ALT, Space, exec, rofi -show drun"
-        ];
     };
 }
