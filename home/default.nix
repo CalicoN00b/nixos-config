@@ -5,6 +5,7 @@
         ./vscodium
         ./yazi
         ./hyprland
+        ./waybar
         ./vesktop.nix
         ./git.nix
         ./kitty.nix

@@ -3,9 +3,14 @@
 {
     wayland.windowManager.hyprland.settings = {
         bind = [
+            # Program keybinds
             "CTRL ALT, T, exec, kitty"
+            "CTRL ALT, V, exec, vesktop --enable-features=UseOzonePlatform --ozone-platform=wayland" 
+            "CTRL ALT, W, exec, pkill waybar && waybar &"
             "ALT, Space, exec, rofi -show drun"
+
             "SUPER, Q, killactive,"
+
             "SUPER, Prior, fullscreen, 0" # PageUp
             "SUPER SHIFT, Prior, fullscreen, 1"
 
@@ -17,10 +22,10 @@
             "CTRL ALT, up, exec, hyprctl dispatch setfloating active"
             "CTRL ALT, down, exec, hyprctl dispatch settiled active"
 
-            "SUPER, left,  movefocus, l"
+            "SUPER, left, movefocus, l"
             "SUPER, right, movefocus, r"
-            "SUPER, up,    movefocus, u"
-            "SUPER, down,  movefocus, d"
+            "SUPER, up, movefocus, u"
+            "SUPER, down, movefocus, d"
 
             "SUPER SHIFT, left, movewindow, l"
             "SUPER SHIFT, right, movewindow, r"
@@ -32,7 +37,7 @@
             "SUPER CTRL, up, resizeactive, 0 -80"
             "SUPER CTRL, down, resizeactive, 0 80"
 
-            "SUPER ALT, left, moveactive,  -80 0"
+            "SUPER ALT, left, moveactive, -80 0"
             "SUPER ALT, right, moveactive, 80 0"
             "SUPER ALT, up, moveactive, 0 -80"
             "SUPER ALT, down, moveactive, 0 80"
