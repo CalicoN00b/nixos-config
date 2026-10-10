@@ -5,7 +5,7 @@
         bind = [
             # Program keybinds
             "CTRL ALT, T, exec, kitty"
-            "CTRL ALT, V, exec, vesktop --enable-features=UseOzonePlatform --ozone-platform=wayland" 
+            "CTRL ALT, V, exec, [workspace 10] vesktop --enable-features=UseOzonePlatform --ozone-platform=wayland" 
             "CTRL ALT, W, exec, pkill waybar && waybar &"
             "ALT, Space, exec, rofi -show drun"
 
