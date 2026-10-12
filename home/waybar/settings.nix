@@ -45,9 +45,9 @@
         };
 
         network = {
-            format-wifi = "{essid} ({signalStrength}%) 󰖩 "; # f05a9
-            format-ethernet = " "; # ef09
-            format-disconnected = "󰖪 "; # f05aa
+            format-wifi = "󰖩  {essid} ({signalStrength}%)"; # f05a9
+            format-ethernet = "  Wired Connection"; # ef09
+            format-disconnected = "󰖪  Disconnected"; # f05aa
             format-linked = "{ifname} (No IP)";
             tooltip-format = "{ifname} via {gwaddr}";
             tooltip = true;

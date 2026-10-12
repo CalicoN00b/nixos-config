@@ -51,7 +51,7 @@
         }
 
         #battery.full {
-            color: green;
+            color: lawngreen;
         }
     '';
 }
