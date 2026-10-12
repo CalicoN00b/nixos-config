@@ -89,6 +89,11 @@
         };
 
         clock = {
+            calendar = {
+                format = {
+                    today = "<span color='#FFA500'><b>{}</b></span>";
+                };
+            };
             format = "{:%I:%M %p}";
             format-alt = "{:%m/%d/%Y}";
             tooltip = true;
