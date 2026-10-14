@@ -1,17 +1,6 @@
 { ... }:
 
 {
-    boot.loader = {
-        grub = {
-            enable = true;
-            device = "nodev";
-            efiSupport = true;
-            useOSProber = true;
-        };
-
-        efi.canTouchEfiVariables = true;
-    };
-
     nix.settings = {
         experimental-features = ["nix-command" "flakes"];
         warn-dirty = false;

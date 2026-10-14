@@ -11,5 +11,6 @@
         ./network.nix
         ./programs.nix
         ./displayManager.nix
+        ./boot.nix
     ];
 }
