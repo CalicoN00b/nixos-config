@@ -33,5 +33,7 @@
             "rd.udev.log_level=3"
             "rd.systemd.show_status=auto"
         ];
+
+        kernelPackages = pkgs.linuxPackages_latest;
     };
 }
