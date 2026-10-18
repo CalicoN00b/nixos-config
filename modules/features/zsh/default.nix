@@ -3,8 +3,13 @@
 {
     flake.nixosModules.zsh = moduleWithSystem ({ self', ... }: {
         programs.zsh = {
-            enable = true;
             package = self'.packages.zsh;
+            enable = true;
+            enableCompletion = true;
+            enableBashCompletion = true;
+            autosuggestions.enable = true;
+            syntaxHighlighting.enable = true;
+            histSize = 10000;
         };
 
         users.defaultUserShell = self'.packages.zsh;
