@@ -1,4 +1,4 @@
-{ self, inputs }:
+{ self, inputs, ... }:
 
 {
     flake.nixosConfigurations.twinkbook = inputs.nixpkgs.lib.nixosSystem {
