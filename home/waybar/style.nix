@@ -15,20 +15,9 @@
         #workspaces, #tray, #network, #pulseaudio, #battery, #clock {
             background-color: rgba(43, 48, 59, 1);
             padding: 0 8px;
+            margin: 5px 5px 0 5px;
             border: 2px solid;
             border-radius: 15px;
-        }
-
-        #workspaces {
-            margin-right: 5px;
-        }
-
-        #clock {
-            margin-left: 5px;
-        }
-
-        #tray, #network, #pulseaudio, #battery {
-            margin: 0 5px;
         }
 
         #network.disconnected {
