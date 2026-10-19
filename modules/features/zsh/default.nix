@@ -11,8 +11,6 @@
             syntaxHighlighting.enable = true;
             histSize = 10000;
         };
-
-        users.defaultUserShell = self'.packages.zsh;
     });
 
     perSystem = { self', pkgs, lib, ... }: {
