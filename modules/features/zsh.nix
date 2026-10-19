@@ -17,7 +17,6 @@
         packages = {
             zsh = inputs.wrapper-modules.wrappers.zsh.wrap {
                 inherit pkgs;
-                runtimePkgs = [ pkgs.lazygit ];
                 zshAliases = {
                     ls = "${lib.getExe pkgs.lsd} -l";
                     g = "${lib.getExe pkgs.lazygit}";
