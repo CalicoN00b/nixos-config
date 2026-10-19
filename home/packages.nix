@@ -28,6 +28,8 @@
         clang-tools
         cmake
         gnumake
+
+        catppuccin-cursors.mochaDark
     ]) ++ (with frc-nix-pkgs; [
         advantagescope
         elastic-dashboard
