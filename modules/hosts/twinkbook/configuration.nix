@@ -10,6 +10,7 @@
         services.displayManager.autologin = {
             enable = true;
             user = "igalaviz";
+            defaultSession = "hyprland";
         };
 
         environment.systemPackages = (with pkgs; [
