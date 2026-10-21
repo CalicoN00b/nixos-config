@@ -1,39 +1,39 @@
 import Quickshell
 import QtQuick
 import QtQuick.Layouts
-import "./Modules/"
+import "./modules/"
 
 PanelWindow {
     id: bar
 
     anchors {
-	top: true
-	left: true
-	right: true
+        top: true
+        left: true
+        right: true
     }
 
     margins {
-	top: 5
-	left: 5
-	right: 5
+        top: 5
+        left: 5
+        right: 5
     }
 
     implicitHeight: 35
     color: "transparent"
     
     Row {
-	id: right
+        id: right
 
-	Layout.alignment: Qt.AlignTop
-	spacing: 10
+        Layout.alignment: Qt.AlignTop
+        spacing: 10
 
-	anchors {
-	    top: parent.top
-	    right: parent.right
-	}
+    anchors {
+        top: parent.top
+        right: parent.right
+    }
 
-	Battery {}
+        Battery {}
 
-	Clock {}
+        Clock {}
     }
 }

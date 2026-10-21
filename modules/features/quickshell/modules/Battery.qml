@@ -16,22 +16,22 @@ Rectangle {
     color: Colors.base
 
     border {
-	width: 2
-	color: Colors.text
+        width: 2
+        color: Colors.text
     }
 
     visible: batteryPresent
 
     Text {
-	id: battery
+        id: battery
 
-	text: (root.mainBattery.percentage * 100) + "%";
-	color: Colors.text
-	anchors.centerIn: parent
+        text: (root.mainBattery.percentage * 100) + "%";
+        color: Colors.text
+        anchors.centerIn: parent
 
-	font {
-	    family: "JetBrainsMono Nerd Font"
-	    pixelSize: 14
-	}
+        font {
+            family: "JetBrainsMono Nerd Font"
+            pixelSize: 14
+        }
     }
-}	
+}   
