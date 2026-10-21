@@ -1,5 +1,6 @@
 import Quickshell
 import QtQuick
+import QtQuick.Layouts
 import "./Modules/"
 
 PanelWindow {
@@ -20,5 +21,19 @@ PanelWindow {
     implicitHeight: 35
     color: "transparent"
     
-    Clock {}
+    Row {
+	id: right
+
+	Layout.alignment: Qt.AlignTop
+	spacing: 10
+
+	anchors {
+	    top: parent.top
+	    right: parent.right
+	}
+
+	Battery {}
+
+	Clock {}
+    }
 }
