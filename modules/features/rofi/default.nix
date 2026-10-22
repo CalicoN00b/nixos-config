@@ -12,7 +12,6 @@
             inherit pkgs;
             package = pkgs.rofi;
             flags = {
-                "-show" = "drun";
                 "-theme" = ./catppuccin.rasi;
             };
         };
