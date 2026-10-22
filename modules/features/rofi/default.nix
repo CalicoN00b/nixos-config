@@ -8,10 +8,13 @@
     });
 
     perSystem = { pkgs, ... }: {
-        packages.rofi = inputs.wrapper-modules.wrappers.rofi.wrap {
+        packages.rofi = inputs.wrapper-modules.lib.wrapPackage {
             inherit pkgs;
-
-            theme = "purple";
+            package = pkgs.rofi;
+            flags = {
+                "-show" = "drun";
+                "-theme" = ./catppuccin.rasi;
+            };
         };
     };
 }
