@@ -14,7 +14,8 @@
                     monitor=
                     fit_mode=cover
                     path=${./wallpapers}
-                    timeout=600
+                    timeout=3600
+                    order=random
                 }
                 splash = false
             '';
