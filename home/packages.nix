@@ -7,6 +7,7 @@
         fluffychat
         rofi
         devenv
+        brightnessctl
 
         # Config has to be done through Librewolf settings and about:config
         # Can do (at least some) config through nix, but not a priority.
