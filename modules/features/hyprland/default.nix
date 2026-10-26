@@ -16,6 +16,7 @@
                 { data = kitty; prefix = true; }
                 { data = rofi; prefix = true; }
                 { data = hyprpaper; prefix = true; }
+                { data = quickshell; prefix = true; }
             ];
 
             configFile = ./hyprland.lua;
