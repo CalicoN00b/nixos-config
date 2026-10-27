@@ -23,7 +23,14 @@
                 hyprshutdown # Temporary
             ]);
 
-            configFile = ./hyprland.lua;
+            "hyprland.lua".content = ''
+                require("binds")
+                require("autostart")
+            '';
+
+            lua.dirs = [
+                ./modules
+            ];
         };
     };
 }
