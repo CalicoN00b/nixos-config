@@ -12,12 +12,14 @@
         packages.hyprland = inputs.wrapper-modules.wrappers.hyprland.wrap {
             inherit pkgs;
 
-            runtimePkgs = with self'.packages; [
+            runtimePkgs = with self'.packages; ([
                 { data = kitty; prefix = true; }
                 { data = rofi; prefix = true; }
                 { data = hyprpaper; prefix = true; }
                 { data = quickshell; prefix = true; }
-            ];
+            ]) ++ (with pkgs; [
+                vesktop # need this as a required package bc of the keybind that opens it in wayland compatible mode
+            ]);
 
             configFile = ./hyprland.lua;
         };
