@@ -8,7 +8,7 @@ hl.config({
         col = {
             active_border = { colors = {"rgba(cba6f7ff)", "rgba(b4befeff)"}, angle = 45 }, -- Catppuccin Mocha Mauve & Lavender
             inactive_border = "rgba(1e1e2eaa)", -- Catppuccin Mocha Base @ 2/3 opacity
-        }
+        },
 
         resize_on_border = false,
         allow_tearing = false,
@@ -24,18 +24,18 @@ hl.config({
         inactive_opacity = 0.9,
 
         shadow = {
-            enable = false,
+            enabled = false,
         },
 
         -- Will maybe figure out non-default values later
         blur = {
-            enable = true,
+            enabled = true,
         },
 
         -- Will maybe figure out non-default values later
-        wobble = {
-            enable = true,
-        },
+        -- wobble = {
+        --     enabled = true,
+        -- },
     },
 
     animations = {
@@ -60,15 +60,15 @@ hl.config({
 
     misc = {
         disable_hyprland_logo = true,
-        disable_spash_rendering = true,
+        disable_splash_rendering = true,
         font_family = "JetBrainsMono Nerd Font",
         disable_autoreload = false,
         focus_on_activate = true,
-        middle_click_past = false,
+        middle_click_paste = false,
     },
 
     ecosystem = {
-        no_update_new = true,
+        no_update_news = true,
         no_donation_nag = true,
     },
 })
