@@ -24,12 +24,14 @@
             ]);
 
             "hyprland.lua".content = ''
+                require("config")
                 require("binds")
                 require("autostart")
             '';
 
             lua.dirs = [
                 ./modules
+                ./hosts
             ];
         };
     };
