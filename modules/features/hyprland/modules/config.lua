@@ -42,6 +42,11 @@ hl.config({
         enabled = true,
     },
 
+    dwindle = {
+        force_split = 2 ,-- New windows split to the right
+        preserve_split = true,
+    },
+
     input = {
         kb_layout  = "us",
         kb_variant = "",
@@ -72,3 +77,6 @@ hl.config({
         no_donation_nag = true,
     },
 })
+
+hl.env("XCURSOR_SIZE", "24")
+hl.env("HYPRCURSOR_SIZE", "24")

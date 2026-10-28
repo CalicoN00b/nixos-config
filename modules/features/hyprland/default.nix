@@ -27,6 +27,21 @@
                 require("config")
                 require("binds")
                 require("autostart")
+                require("animations")
+
+                local handle = io.popen("hostname")
+                local hostname = "twinkbook" -- Default fallback
+
+                -- If there is a hostname at all
+                if handle then
+                    local result = handle:read("*l") -- Read the first line
+                    handle:close()
+                    if result then
+                        Hostname = result:gsub("%s+", "") -- Remove whitespace/newlines
+                    end
+                end
+
+                require(hostname)
             '';
 
             lua.dirs = [
