@@ -23,7 +23,7 @@ Rectangle {
     Text {
         id: battery
 
-        text: BatteryManager.getText();
+        text: hoverHandler.hovered ? BatteryManager.getTextHovered() : BatteryManager.getText();
         color: BatteryManager.getColor()
         anchors.centerIn: parent
 
@@ -31,5 +31,16 @@ Rectangle {
             family: "JetBrainsMono Nerd Font"
             pixelSize: 14
         }
+    }
+
+    Behavior on implicitWidth {
+        SpringAnimation {
+            damping: 0.3
+            spring: 4
+        }
+    }
+
+    HoverHandler {
+        id: hoverHandler
     }
 }   

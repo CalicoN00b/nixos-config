@@ -42,4 +42,63 @@ Singleton {
     function getText() {
         return getIcon() + " " + root.batteryPercentage + "%";
     }
+
+    function getTextHovered() {
+        let finalText = getIcon() + " ";
+        if (mainBattery.state == UPowerDeviceState.FullyCharged) {
+            finalText += "Fully Charged";
+        } else if (mainBattery.state == UPowerDeviceState.Charging) {
+            let time = mainBattery.timeToFull;
+            if (time == 0) {
+                return "Getting Time to Full...";
+            } else {
+                let timeArr = secondsToTime(time);
+                if (timeArr.hours >= 1 || timeArr.hourNeedsIncrement == 1) {
+                    finalText += timeArr.hours + "h ";
+                    if (timeArr.minutesRounded >= 1) {
+                        finalText += timeArr.minutes + "m";
+                    }
+                } else {
+                    finalText += timeArr.minutes + "m " + timeArr.seconds + "s";
+                }
+            }
+        } else if (mainBattery.state == UPowerDeviceState.Discharging) {
+            let time = mainBattery.timeToEmpty;
+            if (time == 0) {
+                return "Getting Time to Empty...";
+            } else {
+                let timeArr = secondsToTime(time);
+                if (timeArr.hours >= 1 || timeArr.hourNeedsIncrement == 1) {
+                    finalText += timeArr.hours + "h ";
+                    if (timeArr.minutesRounded >= 1) {
+                        finalText += timeArr.minutes + "m";
+                    }
+                } else {
+                    finalText += timeArr.minutes + "m " + timeArr.seconds + "s";
+                }
+            }
+        } else {
+            return "Getting Time...";
+        }
+        return finalText;
+    }
+
+    function secondsToTime(totalSeconds) {
+        totalSeconds = Math.max(0, Number(totalSeconds));
+
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = Math.floor(totalSeconds % 60);
+
+        const roundedMinutes = minutes + (seconds >= 30 ? 1 : 0);
+        const hourNeedsIncrement = roundedMinutes === 60;
+
+        return {
+            hours,
+            minutes,
+            seconds,
+            minutesRounded: hourNeedsIncrement ? 0 : roundedMinutes,
+            hourNeedsIncrement
+        }
+    }
 }
