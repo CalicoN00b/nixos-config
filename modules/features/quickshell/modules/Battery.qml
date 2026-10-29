@@ -18,7 +18,7 @@ Rectangle {
         color: BatteryManager.getColor()
     }
 
-    visible: batteryPresent
+    visible: BatteryManager.batteryPresent
 
     Text {
         id: battery

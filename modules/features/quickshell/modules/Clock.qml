@@ -24,7 +24,7 @@ Rectangle {
             precision: SystemClock.Minutes
         }
 
-        text: Qt.formatDateTime(sysclock.date, "h:mm AP")
+        text: hoverHandler.hovered ? Qt.formatDateTime(sysclock.date, "dddd, MMMM d, yyyy") : Qt.formatDateTime(sysclock.date, "h:mm AP")
         color: Colors.text
         anchors.centerIn: parent
 
@@ -32,5 +32,16 @@ Rectangle {
             family: "JetBrainsMono Nerd Font"
             pixelSize: 14
         }
+    }
+
+    Behavior on implicitWidth {
+        SpringAnimation {
+            damping: 0.3
+            spring: 4
+        }
+    }
+
+    HoverHandler {
+        id: hoverHandler
     }
 }

@@ -8,7 +8,7 @@ Singleton {
     id: root
 
     property UPowerDevice mainBattery: UPower.displayDevice || undefined
-    property double batteryPercentage: root.mainBattery.percentage * 100 || 0
+    property int batteryPercentage: root.mainBattery.percentage * 100 || 0
     property bool batteryPresent: root.mainBattery.ready || false
 
     function getColor() {
