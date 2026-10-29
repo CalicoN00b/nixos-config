@@ -1,0 +1,2 @@
+module services
+singleton BatteryManager 1.0 BatteryManager.qml

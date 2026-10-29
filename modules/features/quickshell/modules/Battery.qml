@@ -2,12 +2,10 @@ import Quickshell
 import Quickshell.Services.UPower
 import QtQuick
 import "../Colors.js" as Colors
+import "../services/"
 
 Rectangle {
     id: root
-
-    property UPowerDevice mainBattery: UPower.displayDevice || undefined
-    property bool batteryPresent: root.mainBattery.ready || false
 
     implicitHeight: 35
     implicitWidth: battery.implicitWidth + 20
@@ -17,7 +15,7 @@ Rectangle {
 
     border {
         width: 2
-        color: Colors.text
+        color: BatteryManager.getColor()
     }
 
     visible: batteryPresent
@@ -25,8 +23,8 @@ Rectangle {
     Text {
         id: battery
 
-        text: (root.mainBattery.percentage * 100) + "%";
-        color: Colors.text
+        text: BatteryManager.getText();
+        color: BatteryManager.getColor()
         anchors.centerIn: parent
 
         font {
