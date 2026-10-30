@@ -1,5 +1,4 @@
 import Quickshell
-import Quickshell.Services.UPower
 import QtQuick
 import "../Colors.js" as Colors
 import "../services/"

@@ -7,9 +7,9 @@ import "../Colors.js" as Colors
 Singleton {
     id: root
 
-    property PwNode mainSource: Pipewire.defaultAudioSource
-    property int volume: mainSource?.audio?.volume * 100 ?? 0
-    property bool muted: mainSource?.audio?.muted || true
+    property PwNode mainSink: Pipewire.defaultAudioSink
+    property int volume: mainSink?.audio?.volume * 100 ?? 0
+    property bool muted: !!mainSink?.audio?.muted ?? true
 
     function getColor() {
         if (muted) {
@@ -33,5 +33,9 @@ Singleton {
 
     function getText() {
         return getIcon() + " " + volume + "%";
+    }
+
+    PwObjectTracker {
+        objects: [mainSink]
     }
 }

@@ -1,5 +1,4 @@
 import Quickshell
-import Quickshell.Services.UPower
 import QtQuick
 import "../Colors.js" as Colors
 import "../services/"
@@ -18,12 +17,12 @@ Rectangle {
         color: AudioManager.getColor()
     }
 
-    // visible: AudioManager.mainSource?.ready ?? false
+    visible: AudioManager.mainSink?.ready ?? false
 
     Text {
         id: audio
 
-        text: AudioManager.getText()
+        text: hoverHandler.hovered ? AudioManager.mainSink?.description : AudioManager.getText()
         color: AudioManager.getColor()
         anchors.centerIn: parent
 
@@ -38,5 +37,9 @@ Rectangle {
             damping: 0.3
             spring: 4
         }
+    }
+
+    HoverHandler {
+        id: hoverHandler
     }
 }
