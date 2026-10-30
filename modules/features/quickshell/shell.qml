@@ -27,10 +27,12 @@ PanelWindow {
         Layout.alignment: Qt.AlignTop
         spacing: 10
 
-    anchors {
-        top: parent.top
-        right: parent.right
-    }
+        anchors {
+            top: parent.top
+            right: parent.right
+        }
+
+        Network {}
 
         Audio {}
 
