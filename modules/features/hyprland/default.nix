@@ -6,6 +6,10 @@
             enable = true;
             package = self'.packages.hyprland;
         };
+
+        environment.sessionVariables = {
+            NIXOS_OZONE_WL = 1;
+        };
     });
 
     perSystem = { pkgs, self', ... }: {
@@ -18,9 +22,7 @@
                 { data = hyprpaper; prefix = true; }
                 { data = quickshell; prefix = true; }
             ]) ++ (with pkgs; [
-                vesktop # need this as a required package bc of the keybind that opens it in wayland compatible mode
                 hyprlock # Temporary, will be packaged into self'.packages
-                hyprshutdown # Temporary
             ]);
 
             "hyprland.lua".content = ''

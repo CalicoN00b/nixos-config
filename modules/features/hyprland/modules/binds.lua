@@ -1,7 +1,6 @@
 local mainMod = "SUPER"
 
 hl.bind("CONTROL + ALT + T", hl.dsp.exec_cmd("kitty", { float = true }))
-hl.bind("CONTROL + ALT + V", hl.dsp.exec_cmd("[vesktop --enable-features=UseOzonePlatform --ozone-platform=wayland", { workspace = 10 }))
 hl.bind("ALT + SPACE", hl.dsp.exec_cmd("rofi -show drun"))
 
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
