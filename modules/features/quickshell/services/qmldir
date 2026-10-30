@@ -1,2 +1,3 @@
 module services
 singleton BatteryManager 1.0 BatteryManager.qml
+singleton AudioManager 1.0 AudioManager.qml

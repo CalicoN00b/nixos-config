@@ -32,6 +32,8 @@ PanelWindow {
         right: parent.right
     }
 
+        Audio {}
+
         Battery {}
 
         Clock {}
