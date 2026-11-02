@@ -4,13 +4,12 @@
     flake.nixosModules.twinkbook-configuration = { pkgs, ... }: {
         imports = [ ./_hardware-configuration.nix ];
 
-        networking.hostname = "twinkbook";
+        networking.hostName = "twinkbook";
         system.stateVersion = "26.05";
 
-        services.displayManager.autologin = {
+        services.displayManager.autoLogin = {
             enable = true;
             user = "igalaviz";
-            defaultSession = "hyprland";
         };
 
         environment.systemPackages = (with pkgs; [

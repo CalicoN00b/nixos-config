@@ -6,7 +6,7 @@
             (pkgs.catppuccin-sddm.override {
                 flavor = "mocha";
                 font = "JetBrainsMono Nerd Font";
-                fontSize = 11;
+                fontSize = "11";
                 background = null;
             })
         ];

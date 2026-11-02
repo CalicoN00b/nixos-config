@@ -2,6 +2,11 @@
 
 {
     flake.nixosModules.kitty = moduleWithSystem ({ self', ... }: {
+        imports = with self.nixosModules; [
+            btop
+            yazi
+        ];
+
         environment.systemPackages = [
             self'.packages.kitty
         ];
