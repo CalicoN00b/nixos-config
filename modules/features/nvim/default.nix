@@ -20,6 +20,9 @@
                 # Nix Language Server and Formatter
                 nixd
                 alejandra
+
+                # CPP Language Server and Formatter (clangd and clang-format)
+                libclang
             ];
         };
     };

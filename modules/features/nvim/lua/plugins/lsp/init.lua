@@ -5,3 +5,4 @@ vim.pack.add({
 vim.diagnostic.config({ virtual_text = true })
 
 require("plugins.lsp.nixd")
+require("plugins.lsp.clangd")

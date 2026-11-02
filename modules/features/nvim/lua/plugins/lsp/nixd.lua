@@ -11,6 +11,4 @@ vim.lsp.config("nixd", {
     },
 })
 
-vim.lsp.enable({
-    "nixd"
-})
+vim.lsp.enable("nixd")
