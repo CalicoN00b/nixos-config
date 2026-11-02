@@ -17,6 +17,8 @@
             inherit pkgs;
             settings.config_directory = ./.;
             runtimePkgs = with pkgs; [
+                tree-sitter # Required for nvim-treesitter plugin
+
                 # Nix Language Server and Formatter
                 nixd
                 alejandra

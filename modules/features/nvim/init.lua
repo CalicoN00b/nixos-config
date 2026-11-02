@@ -27,7 +27,6 @@ vim.opt.laststatus = 3
 
 vim.opt.clipboard:append("unnamedplus")
 
-vim.opt.guicursor = ""
 vim.opt.colorcolumn = "0"
 vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
