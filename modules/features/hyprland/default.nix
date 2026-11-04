@@ -7,6 +7,11 @@
             package = self'.packages.hyprland;
         };
 
+        environment.systemPackages = with pkgs; [
+            vlc
+            wl-clipboard
+        ];
+
         environment.sessionVariables = {
             NIXOS_OZONE_WL = 1;
         };

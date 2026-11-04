@@ -20,6 +20,20 @@ PanelWindow {
 
     implicitHeight: 35
     color: "transparent"
+
+    Row {
+        id: left
+
+        Layout.alignment: Qt.AlignTop
+        spacing: 10
+
+        anchors {
+            top: parent.top
+            left: parent.left
+        }
+
+        Workspaces {}
+    }
     
     Row {
         id: right
