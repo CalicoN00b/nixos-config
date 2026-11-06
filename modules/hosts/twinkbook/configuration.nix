@@ -5,7 +5,6 @@
 }: {
     flake.nixosModules.twinkbook-configuration = {
         pkgs,
-        inputs',
         ...
     }: {
         imports = [./_hardware-configuration.nix];
@@ -22,7 +21,7 @@
             (with pkgs; [
                 obsidian
             ])
-            ++ (with inputs'.frc-nix.packages; [
+            ++ (with inputs.frc-nix.packages.${pkgs.stdenv.hostPlatform.system}; [
                 advantagescope
                 elastic-dashboard
                 pathplanner
