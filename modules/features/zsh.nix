@@ -17,6 +17,7 @@
         packages = {
             zsh = inputs.wrapper-modules.wrappers.zsh.wrap {
                 inherit pkgs;
+                runtimePkgs = [ pkgs.devenv ];
                 zshAliases = {
                     ls = "${lib.getExe pkgs.lsd} -l";
                     g = "${lib.getExe pkgs.lazygit}";
@@ -38,7 +39,12 @@
                     export MANPAGER='less'
                     export GROFF_NO_SGR=1
 
+                    if command -v ${lib.getExe pkgs.nix-your-shell} > /dev/null; then
+                        ${lib.getExe pkgs.nix-your-shell} zsh | source /dev/stdin
+                    fi
+
                     eval "$(${lib.getExe self'.packages.starship} init zsh)"
+                    eval "$(${lib.getExe pkgs.devenv} hook zsh)"
                 '';                    
             };
 
