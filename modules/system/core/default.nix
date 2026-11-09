@@ -34,7 +34,9 @@
             fluffychat
             vesktop
 
+            # Development stuff
             devenv
+            git
         ];
 
         # This doesn't belong anywhere specific so it will go here
