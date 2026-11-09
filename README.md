@@ -35,7 +35,7 @@ Then, reboot your system and you should be fine.
 
 # Post-Installation
 
-Some things are imperatively installed, and thus will need manually configuration.
+Some things won't have their configuration done through nix, and thus will need manual configuration.
 I had done some of them before through nix, but I've decided it's easier to let me
 manually do them so nix can't get in the way.
 
