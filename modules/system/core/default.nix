@@ -36,5 +36,8 @@
 
             devenv
         ];
+
+        # This doesn't belong anywhere specific so it will go here
+        hardware.graphics.enable = true;
     };
 }

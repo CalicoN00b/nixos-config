@@ -2,9 +2,11 @@
 
 {
     flake.nixosModules.kitty = moduleWithSystem ({ self', ... }: {
+        # The terminal should come with the terminal programs
         imports = with self.nixosModules; [
             btop
             yazi
+            neovim
         ];
 
         environment.systemPackages = [

@@ -2,6 +2,13 @@
 
 {
     flake.nixosModules.hyprland = moduleWithSystem ({ self', pkgs, ... }: {
+        imports = with self'.nixosModules; [
+            kitty
+            rofi
+            hyprpaper
+            quickshell
+        ];
+
         programs.hyprland = {
             enable = true;
             package = self'.packages.hyprland;
