@@ -1,13 +1,7 @@
 { self, inputs, moduleWithSystem, ... }:
 
 {
-    flake.nixosModules.hyprpaper = moduleWithSystem ({ self', ... }: {
-        imports = with self.nixosModules; [
-            quickshell
-            rofi
-            kitty
-        ];
-        
+    flake.nixosModules.hyprpaper = moduleWithSystem ({ self', ... }: {        
         environment.systemPackages = [
             self'.packages.hyprpaper
         ];

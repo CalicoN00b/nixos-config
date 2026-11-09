@@ -2,7 +2,7 @@
 
 {
     flake.nixosModules.neovim = moduleWithSystem ({ self', ... }: {
-        program.neovim = {
+        programs.neovim = {
             enable = true;
             package = self'.packages.neovim;
         };

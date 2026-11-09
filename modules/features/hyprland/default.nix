@@ -2,7 +2,7 @@
 
 {
     flake.nixosModules.hyprland = moduleWithSystem ({ self', pkgs, ... }: {
-        imports = with self'.nixosModules; [
+        imports = with self.nixosModules; [
             kitty
             rofi
             hyprpaper
