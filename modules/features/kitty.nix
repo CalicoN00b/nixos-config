@@ -1,7 +1,10 @@
-{ self, inputs, moduleWithSystem, ... }:
-
 {
-    flake.nixosModules.kitty = moduleWithSystem ({ self', ... }: {
+    self,
+    inputs,
+    moduleWithSystem,
+    ...
+}: {
+    flake.nixosModules.kitty = moduleWithSystem ({self', ...}: {
         # The terminal should come with the terminal programs
         imports = with self.nixosModules; [
             btop
@@ -14,14 +17,19 @@
         ];
     });
 
-    perSystem = { self', pkgs, lib, ... }: {
+    perSystem = {
+        self',
+        pkgs,
+        lib,
+        ...
+    }: {
         packages.kitty = inputs.wrapper-modules.wrappers.kitty.wrap {
             inherit pkgs;
 
             environment = let
                 jetbrains-mono = pkgs.nerd-fonts.jetbrains-mono;
                 fontsConf = pkgs.makeFontsConf {
-                    fontDirectories = [ jetbrains-mono ];
+                    fontDirectories = [jetbrains-mono];
                 };
             in {
                 "FONTCONFIG_FILE" = "${fontsConf}";

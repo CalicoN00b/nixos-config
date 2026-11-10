@@ -1,7 +1,10 @@
-{ self, inputs, moduleWithSystem, ...  }:
-
 {
-    flake.nixosModules.zsh = moduleWithSystem ({ self', ... }: {
+    self,
+    inputs,
+    moduleWithSystem,
+    ...
+}: {
+    flake.nixosModules.zsh = moduleWithSystem ({self', ...}: {
         programs.zsh = {
             package = self'.packages.zsh;
             enable = true;
@@ -13,16 +16,21 @@
         };
     });
 
-    perSystem = { self', pkgs, lib, ... }: {
+    perSystem = {
+        self',
+        pkgs,
+        lib,
+        ...
+    }: {
         packages = {
             zsh = inputs.wrapper-modules.wrappers.zsh.wrap {
                 inherit pkgs;
-                runtimePkgs = [ pkgs.devenv ];
+                runtimePkgs = [pkgs.devenv];
                 zshAliases = {
                     ls = "${lib.getExe pkgs.lsd} -l";
                     g = "${lib.getExe pkgs.lazygit}";
                 };
-                zshrc.content = ''                    
+                zshrc.content = ''
                     export LESS_TERMCAP_mb=$'\e[1;31m'
                     export LESS_TERMCAP_md=$'\e[1;31m'
                     export LESS_TERMCAP_me=$'\e[0m'
@@ -45,7 +53,7 @@
 
                     eval "$(${lib.getExe self'.packages.starship} init zsh)"
                     eval "$(${lib.getExe pkgs.devenv} hook zsh)"
-                '';                    
+                '';
             };
 
             starship = inputs.wrapper-modules.wrappers.starship.wrap {

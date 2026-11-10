@@ -1,14 +1,17 @@
-{ self, inputs, moduleWithSystem, ... }:
-
 {
-    flake.nixosModules.yazi = moduleWithSystem ({ self', ... }: {
+    self,
+    inputs,
+    moduleWithSystem,
+    ...
+}: {
+    flake.nixosModules.yazi = moduleWithSystem ({self', ...}: {
         programs.yazi = {
             enable = true;
             package = self'.packages.yazi;
         };
     });
 
-    perSystem = { pkgs, ... }: {
+    perSystem = {pkgs, ...}: {
         packages.yazi = inputs.wrapper-modules.wrappers.yazi.wrap {
             inherit pkgs;
 

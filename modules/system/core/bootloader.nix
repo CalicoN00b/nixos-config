@@ -1,7 +1,9 @@
-{ self, inputs, ... }:
-
 {
-    flake.nixosModules.bootloader = { pkgs, ... }: {
+    self,
+    inputs,
+    ...
+}: {
+    flake.nixosModules.bootloader = {pkgs, ...}: {
         boot = {
             loader = {
                 grub = {

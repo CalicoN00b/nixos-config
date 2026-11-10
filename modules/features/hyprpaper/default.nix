@@ -1,14 +1,17 @@
-{ self, inputs, moduleWithSystem, ... }:
-
 {
-    flake.nixosModules.hyprpaper = moduleWithSystem ({ self', ... }: {        
+    self,
+    inputs,
+    moduleWithSystem,
+    ...
+}: {
+    flake.nixosModules.hyprpaper = moduleWithSystem ({self', ...}: {
         environment.systemPackages = [
             self'.packages.hyprpaper
         ];
     });
 
-    perSystem = { pkgs, ... }: {
-        packages.hyprpaper = let 
+    perSystem = {pkgs, ...}: {
+        packages.hyprpaper = let
             config-file = builtins.toFile "hyprpaper.conf" ''
                 wallpaper {
                     monitor=

@@ -1,8 +1,10 @@
-{ self, inputs, ... }:
-
 {
-    flake.nixosModules.battery = { pkgs, ... }: {
-        environment.systemPackages = [ pkgs.upower ];
+    self,
+    inputs,
+    ...
+}: {
+    flake.nixosModules.battery = {pkgs, ...}: {
+        environment.systemPackages = [pkgs.upower];
 
         services = {
             upower.enable = true;

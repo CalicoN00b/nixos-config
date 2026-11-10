@@ -1,7 +1,9 @@
-{ self, inputs, ... }:
-
 {
-    flake.nixosModules.locale = { ... }: {
+    self,
+    inputs,
+    ...
+}: {
+    flake.nixosModules.locale = {...}: {
         time.timeZone = "America/Denver";
 
         i18n = {

@@ -1,7 +1,14 @@
-{ self, inputs, moduleWithSystem, ... }:
-
 {
-    flake.nixosModules.hyprland = moduleWithSystem ({ self', pkgs, ... }: {
+    self,
+    inputs,
+    moduleWithSystem,
+    ...
+}: {
+    flake.nixosModules.hyprland = moduleWithSystem ({
+        self',
+        pkgs,
+        ...
+    }: {
         imports = with self.nixosModules; [
             kitty
             rofi
@@ -27,18 +34,37 @@
         services.displayManager.defaultSession = "hyprland";
     });
 
-    perSystem = { pkgs, self', ... }: {
+    perSystem = {
+        pkgs,
+        self',
+        ...
+    }: {
         packages.hyprland = inputs.wrapper-modules.wrappers.hyprland.wrap {
             inherit pkgs;
 
-            runtimePkgs = with self'.packages; ([
-                { data = kitty; prefix = true; }
-                { data = rofi; prefix = true; }
-                { data = hyprpaper; prefix = true; }
-                { data = quickshell; prefix = true; }
-            ]) ++ (with pkgs; [
-                hyprlock # Temporary, will be packaged into self'.packages
-            ]);
+            runtimePkgs = with self'.packages;
+                [
+                    {
+                        data = kitty;
+                        prefix = true;
+                    }
+                    {
+                        data = rofi;
+                        prefix = true;
+                    }
+                    {
+                        data = hyprpaper;
+                        prefix = true;
+                    }
+                    {
+                        data = quickshell;
+                        prefix = true;
+                    }
+                ]
+                ++ (with pkgs; [
+                    hyprlock # Temporary, will be packaged into self'.packages
+                    brightnessctl
+                ]);
 
             "hyprland.lua".content = ''
                 require("config")

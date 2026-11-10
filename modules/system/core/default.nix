@@ -1,7 +1,9 @@
-{ self, inputs, ... }:
-
 {
-    flake.nixosModules.core = { pkgs, ... }: {
+    self,
+    inputs,
+    ...
+}: {
+    flake.nixosModules.core = {pkgs, ...}: {
         imports = with self.nixosModules; [
             bootloader
             nix-settings

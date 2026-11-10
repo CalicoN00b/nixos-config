@@ -3,10 +3,7 @@
     inputs,
     ...
 }: {
-    flake.nixosModules.twinkbook-configuration = {
-        pkgs,
-        ...
-    }: {
+    flake.nixosModules.twinkbook-configuration = {pkgs, ...}: {
         imports = [./_hardware-configuration.nix];
 
         networking.hostName = "twinkbook";
