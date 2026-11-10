@@ -4,13 +4,6 @@
     inputs = {
         nixpkgs.url = "nixpkgs/nixos-26.05";
 
-        home-manager = {
-            url = "github:nix-community/home-manager/release-26.05";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-
-        nixvim.url = "github:nix-community/nixvim/nixos-26.05";
-
         frc-nix.url = "github:frc4451/frc-nix/season/2026";
 
         flake-parts.url = "github:hercules-ci/flake-parts";
@@ -21,29 +14,4 @@
     outputs = inputs:
         inputs.flake-parts.lib.mkFlake {inherit inputs;}
         (inputs.import-tree ./modules);
-
-    # outputs = { self, nixpkgs, nixvim, frc-nix, ... }@inputs:
-    # let
-    #     username = "MY_USERNAME";
-    #     host = "MY_HOSTNAME";
-    #     system = "x86_64-linux";
-    #     lib = nixpkgs.lib;
-    #     pkgs = import nixpkgs {
-    #         inherit system;
-    #         config = {
-    #             allowUnfree = true;
-    #             allowUnfreePredicate = (_: true);
-    #         };
-    #     };
-    # in {
-    #     nixosConfigurations = {
-    #         MY_HOSTNAME = lib.nixosSystem {
-    #             inherit system;
-    #             modules = [ ./system ];
-    #             specialArgs = {
-    #                 inherit self inputs username host nixvim frc-nix;
-    #             };
-    #         };
-    #     };
-    # };
 }
