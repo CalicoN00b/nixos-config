@@ -12,7 +12,7 @@ hl.bind(mainMod .. " + SHIFT + Prior", hl.dsp.window.fullscreen({ mode = "maximi
 for i = 1, 10 do
     local key = i % 10
     hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
-    hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.focus({ workspace = i, follow = true }))
+    hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
     hl.bind(mainMod .. " + CONTROL + " .. key, hl.dsp.focus({ workspace = i, follow = false }))
 end
 
