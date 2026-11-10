@@ -35,6 +35,10 @@ Singleton {
         return getIcon() + " " + volume + "%";
     }
 
+    function getTextHovered() {
+        return getIcon() + " " + mainSink?.description;
+    }
+
     PwObjectTracker {
         objects: [mainSink]
     }

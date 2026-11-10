@@ -22,7 +22,7 @@ Rectangle {
     Text {
         id: audio
 
-        text: hoverHandler.hovered ? AudioManager.mainSink?.description : AudioManager.getText()
+        text: hoverHandler.hovered ? AudioManager.getTextHovered() : AudioManager.getText()
         color: AudioManager.getColor()
         anchors.centerIn: parent
 
