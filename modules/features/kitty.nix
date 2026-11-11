@@ -46,6 +46,7 @@
                 cursor_trail = 1;
                 cursor_shape = "beam";
                 shell = "${lib.getExe self'.packages.zsh}";
+                remember_window_size = true;
             };
 
             themeFile = "Catppuccin-Mocha";
