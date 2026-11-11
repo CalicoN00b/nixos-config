@@ -1,0 +1,42 @@
+require("vim._core.ui2").enable({})
+vim.cmd.colorscheme("catppuccin")
+
+vim.g.mapleader = " "
+
+require("plugins")
+
+vim.g.netrw_banner = 0
+
+vim.opt.nu = true
+vim.opt.relativenumber = true
+
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+
+vim.opt.wrap = false
+vim.opt.smartindent = true
+vim.opt.inccommand = "split"
+
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.laststatus = 3
+
+vim.opt.clipboard:append("unnamedplus")
+
+vim.opt.colorcolumn = "0"
+vim.opt.signcolumn = "yes"
+vim.opt.termguicolors = true
+
+vim.o.exrc = true
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+    desc = "Highlight when yanking text",
+    callback = function ()
+        vim.hl.on_yank()
+    end,
+})

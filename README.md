@@ -2,58 +2,60 @@
 
 This is CalicoN00b's personal configuration for NixOS.
 
+> [!CAUTION]
+> This is a PERSONAL config, so I'm NOT gonna provide instructions for other people to install.
+> All instructions will be for me and me only, so don't complain to me if it doesn't work for you.
+
 # Installation
 
-> [!CAUTION]
-> This is a personal config, so please use at your own risk.
-> What works for me may not work for you!
+For a new host, create a new folder under `modules/hosts` with your desired hostname
+(technically name doesn't matter, but it helps for keeping track).
 
-> [!WARNING]
-> I don't know if this config works on Virtual Machines.
-> I tried it on a NixOS VM and it complained about something I couldn't figure out.
-
-## 1. Install NixOS.
-
-I installed NixOS using the KDE Graphical Installer and installed the KDE Version of NixOS.
-It may work for other DE's (such as no desktop or whatever), but I haven't tested it,
-
-## 2. Clone the repository
+Move the hardware configuration of your host into the directory:
 
 ```bash
-nix-shell -p git # Temporatily installs git
-git clone https://github.com/CalicoN00b/nixos-config # Clones the repository
-cd nixos-config # Enters the cloned repository
+mv /etc/nixos/hardware-configuration.nix modules/hosts/{hostname}/_hardware-configuration.nix
 ```
 
-The repo can be located anywhere on the system, but I like to keep mine under `~/nixos-config`
+Create a `configuration.nix` file in the host's folder, which will hold system specific configurations,
+such as hostname, state version, packages, services, etc. Look at other hosts for reference.
 
-## 3. Run the installation script
+Create a `default.nix` file in the host's folder, which will contain the actual NixOS System configuration.
+This should really just import the other flake modules to build the system. It must contain core, hyprland, and your system specific configuration.
+Look at other hosts for reference.
 
-First, inspect the script so you know what it does. Obviously I've tested it myself
-and it should work and not be malicious, but you should always understand what you're running
-before you run it on your machine.
-
-In the repo, run this command:
+Once you are done building the new system config, rebuild your system. The first time you do so,
+you should specify the name of the flake nixosConfiguration, but in future you won't need do.
 
 ```bash
-./install.sh
+sudo nixos-rebuild switch --flake .#{hostname}
 ```
 
-If you for some reason can't run the script, run `chmod +x install.sh`, and then rerun the script.
+Then, reboot your system and you should be fine.
 
-The script will guide you through changing your username, changing your hostname, and changing your git user name and user email.
+# Post-Installation
 
-## 4. Reboot
+Some things won't have their configuration done through nix, and thus will need manual configuration.
+I had done some of them before through nix, but I've decided it's easier to let me
+manually do them so nix can't get in the way.
 
-After you have installed the system, reboot the system.
+## Git
 
-# Imperative Configuration
+Set up your ssh key and add it to Github. Make sure you also add your ssh key as a signing key as well.
+Set up user name and user email. Make sure you sign commits by default with your ssh key.
 
-After installing this config, some configuration will still need to be done manually.
-Some examples are yazi, vesktop, and librewolf.
-Yazi and vesktop both have configs under `imperative-configs`, which you can figure out how to use yourself.
-NOTE: THE YAZI CONFIG DOES NOT CURRENTLY WORK
+## Vesktop
 
-# Enjoy!
+Transfer over a backup of your settings from another machine, or just make a new one through the Vesktop settings.
 
-Congratulations, you now have my (objectively awesome) NixOS setup!
+## Librewolf
+
+Customize it the way you like, which is basically just the shortcuts on the home page, and also make it
+so that it doesn't close when you close the last tab. And also Dark Reader and make downloads ask where to go.
+Also since it's Librewolf make sure it will save your history between sessions.
+
+# Enjoy
+
+That should be everything. Once again, this is a ***PERSONAL CONFIG***, so if you've read this far and you're not me,
+what are you doing? If you have issues with it, don't come to me about it, I'm not going to be offering support
+for my ***PERSONAL CONFIG***.
