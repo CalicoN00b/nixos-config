@@ -15,6 +15,8 @@ Singleton {
 
     property var networks: wifiDevice?.networks.values ?? []
     property var active: networks.find(n => n.connected) ?? null
+    property string activeName: active?.name ?? "No Wifi Name"
+    property int activeStrength: active?.signalStrength * 100 ?? 0
 
     property bool wifiConnected: wifiDevice?.connected ?? false
     property bool ethernetConnected: ethernetDevice?.connected ?? false
@@ -43,9 +45,7 @@ Singleton {
         if (ethernetConnected) {
             return getIcon() + " Wired Connection";
         } else if (wifiConnected) {
-            let name = active?.name ?? "No Wifi Name";
-            let strength = active?.signalStrength * 100 ?? 0;
-            return getIcon() + " " + name + " (" + strength + "%)";
+            return getIcon() + " " + activeName + " (" + activeStrength + "%)";
         } else {
             return getIcon() + " Disconnected";
         }
