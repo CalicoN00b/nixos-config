@@ -13,5 +13,10 @@
             default = "saved";
             useOSProber = true;
         };
+
+        hardware.nvidia = {
+            enabled = true;
+            open = true;
+        };
     };
 }

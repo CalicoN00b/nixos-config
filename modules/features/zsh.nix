@@ -53,6 +53,8 @@
 
                     eval "$(${lib.getExe self'.packages.starship} init zsh)"
                     eval "$(${lib.getExe pkgs.devenv} hook zsh)"
+
+                    ${lib.getExe pkgs.fastfetch}
                 '';
             };
 
