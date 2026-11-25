@@ -33,12 +33,17 @@
             librewolf
 
             # Communication
-            fluffychat
             vesktop
 
             # Development stuff
             devenv
             git
+
+            # Misc Graphical Programs
+            vlc # We all know what vlc is
+            nemo # File browser
+            evince # Document Viewer
+            eog # Image viewer
         ];
 
         # This doesn't belong anywhere specific so it will go here
