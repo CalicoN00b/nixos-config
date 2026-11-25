@@ -15,7 +15,7 @@
 
         services.displayManager.sddm = {
             enable = true;
-            theme = "catppuccin-mocha-muave";
+            theme = "catppuccin-mocha-mauve";
             package = pkgs.kdePackages.sddm;
         };
     };
