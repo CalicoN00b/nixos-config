@@ -13,6 +13,7 @@
             kitty
             rofi
             hyprpaper
+            hyprlock
             quickshell
         ];
 
@@ -60,9 +61,12 @@
                         data = quickshell;
                         prefix = true;
                     }
+                    {
+                        data = hyprlock;
+                        prefix = true;
+                    }
                 ]
                 ++ (with pkgs; [
-                    hyprlock # Temporary, will be packaged into self'.packages
                     brightnessctl
                 ]);
 
