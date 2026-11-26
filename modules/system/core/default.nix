@@ -44,6 +44,9 @@
             nemo # File browser
             evince # Document Viewer
             eog # Image viewer
+
+            # Misc Terminal Programs
+            yt-dlp
         ];
 
         # This doesn't belong anywhere specific so it will go here

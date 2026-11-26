@@ -17,12 +17,7 @@
         ];
     });
 
-    perSystem = {
-        self',
-        pkgs,
-        lib,
-        ...
-    }: {
+    perSystem = {pkgs, ...}: {
         packages.kitty = inputs.wrapper-modules.wrappers.kitty.wrap {
             inherit pkgs;
 
@@ -45,7 +40,6 @@
                 background_opacity = 0.8;
                 cursor_trail = 1;
                 cursor_shape = "beam";
-                shell = "${lib.getExe self'.packages.zsh}";
                 remember_window_size = true;
             };
 

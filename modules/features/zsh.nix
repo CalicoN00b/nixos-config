@@ -4,9 +4,17 @@
     moduleWithSystem,
     ...
 }: {
-    flake.nixosModules.zsh = moduleWithSystem ({self', ...}: {
+    flake.nixosModules.zsh = moduleWithSystem ({
+        self',
+        pkgs,
+        ...
+    }: {
+        nixpkgs.overlays = [
+            (final: prev: {
+                zsh = self'.packages.zsh;
+            })
+        ];
         programs.zsh = {
-            package = self'.packages.zsh;
             enable = true;
             enableCompletion = true;
             enableBashCompletion = true;
@@ -14,6 +22,7 @@
             syntaxHighlighting.enable = true;
             histSize = 10000;
         };
+        users.defaultUserShell = pkgs.zsh;
     });
 
     perSystem = {
@@ -53,6 +62,10 @@
 
                     eval "$(${lib.getExe self'.packages.starship} init zsh)"
                     eval "$(${lib.getExe pkgs.devenv} hook zsh)"
+
+                    bindkey -v
+                    bindkey '^R' history-incremental-search-backward
+                    bindkey '^S' history-incremental-search-forward
 
                     ${lib.getExe pkgs.fastfetch}
                 '';

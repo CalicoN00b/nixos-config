@@ -4,16 +4,14 @@
     moduleWithSystem,
     ...
 }: {
-    flake.nixosModules.user = moduleWithSystem ({self', ...}: {
-        users = {
-            users.igalaviz = {
-                isNormalUser = true;
-                shell = self'.packages.zsh;
-                description = "Ian Galaviz";
-                extraGroups = ["networkmanager " "wheel"];
-            };
+    flake.nixosModules.user = moduleWithSystem ({pkgs, ...}: {
+        imports = [self.nixosModules.zsh];
 
-            defaultUserShell = self'.packages.zsh;
+        users.users.igalaviz = {
+            isNormalUser = true;
+            shell = pkgs.zsh;
+            description = "Ian Galaviz";
+            extraGroups = ["networkmanager" "wheel"];
         };
 
         nix.settings.allowed-users = ["igalaviz"];
